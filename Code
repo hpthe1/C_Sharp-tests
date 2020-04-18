@@ -1,0 +1,101 @@
+using System.Linq;
+using System;
+
+namespace MyApplication
+{
+   class Cl
+  {
+      public string color= "red";
+      
+  }
+  
+  class Person
+  {
+      private string name;
+      
+      public string Name
+      /*{
+          get { return name; }
+          set { name = value; }
+      }*/
+      // automatic 
+      {get; set;}
+  }
+  //sealed class car -- can not be assaccible;
+  class Program
+  {
+    static void Print()
+    {
+        Console.WriteLine("It is in the method");
+    }
+    static void Main(string[] args)
+    {
+      int myInt = 10;
+      double myDouble = 5.25;
+      string myBool = "HelloG";
+      string an ="Vandana";
+      string bn ="Yograj";
+      string cn = "Sunita";
+
+      Console.WriteLine(Convert.ToString(myInt));    // Convert int to string
+      Console.WriteLine(Convert.ToDouble(myInt));    // Convert int to double
+      Console.WriteLine(Convert.ToInt32(myDouble));  // Convert double to int
+      //Console.WriteLine(Convert.ToString(myBool)); // Convert bool to string
+      Console.WriteLine(myBool+" is a string now");
+      
+      int userip = Convert.ToInt32(Console.ReadLine())+45;
+      
+      Console.WriteLine(Math.Max(myInt,userip));
+      Console.WriteLine(Math.Sqrt(userip));
+      Console.WriteLine(Math.Round(Math.Sqrt(userip)));
+      Console.WriteLine(myBool.Length);
+      Console.WriteLine(myBool.ToUpper());
+      Console.WriteLine(myBool.ToLower());
+      
+      string family = $"My family members are {an}, {bn}, {cn}";
+      Console.WriteLine(family);
+      Console.WriteLine(family[10]);
+      Console.WriteLine(family.IndexOf("V"));
+      int charpos = family.IndexOf("Y");
+      
+      string papa = family.Substring(charpos);
+      Console.WriteLine(papa);
+      Console.WriteLine(10>9);
+      Console.WriteLine("\n");
+      
+      string[] cars= {"Volvo","Maruti","Honda","Audi"};
+      
+      foreach(string i in cars){
+          Console.WriteLine(i);
+      }
+      Console.WriteLine("loop completed\n");
+      
+      Array.Sort(cars);
+      foreach(string i in cars){
+          Console.WriteLine(i);
+      }
+      Console.WriteLine("loop completed\n");
+      int[] num;
+      num = new int[] {5,4,7,1,6,8,1,2,8};
+      Array.Sort(num);
+      foreach(int i in num){
+          Console.WriteLine(i);
+      }
+      
+      Console.WriteLine("loop completed\n");
+      Console.WriteLine(num.Sum());
+      Print();
+      Cl obj = new Cl();
+      Cl obh = new Cl();
+      Console.WriteLine(obh.color);
+      Console.WriteLine(obj.color+"\n");
+      
+      Person myobj = new Person();
+      myobj.Name="Himanshu";
+      Console.WriteLine(myobj.Name);
+      
+      Console.WriteLine("\nHello Mr. "+ userip );
+        
+    }
+  }
+}
