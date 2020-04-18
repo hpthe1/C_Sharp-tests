@@ -1,0 +1,17 @@
+using System.IO;
+using System;
+
+namespace MyApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string text="this is a text.";
+            File.WriteAllText("filename.txt",text);
+            
+            string ReadText = File.ReadAllText("filename.txt");
+            Console.WriteLine(ReadText);
+        }
+    }
+}
